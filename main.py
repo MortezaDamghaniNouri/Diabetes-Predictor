@@ -1,20 +1,17 @@
 import pandas as pd
-data = pd.read_csv("Dataset/diabetes.csv")
-data_list = data.values.tolist()
-print(data_list[0])
-
-
-
-
-
-
-
-
-
-
-
-
-
+import numpy as np
+dataset = pd.read_csv("Dataset/diabetes.csv")
+dataset_list = dataset.values.tolist()
+# Finding the indexes of Nan values
+null_indexes = []
+column_names = []
+for name in dataset.columns:
+    column_names.append(name)
+column_names.pop(0)
+for name in column_names:
+    temp = dataset[dataset[name].isnull()].index.tolist()
+    for i in temp:
+        null_indexes.append(i)
 
 
 
