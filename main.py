@@ -19,6 +19,37 @@ while i < len(dataset_list):
         cleaned_dataset_list.append(dataset_list[i])
     i += 1
 
+# Removing white spaces in different tuples
+i = 0
+while i < len(cleaned_dataset_list):
+    j = 0
+    while j < len(cleaned_dataset_list[0]):
+        if str(cleaned_dataset_list[i][j]).find(" ") != -1:
+            cleaned_dataset_list[i][j] = cleaned_dataset_list[i][j].replace(" ", "_")
+        j += 1
+    i += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
