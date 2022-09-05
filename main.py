@@ -184,10 +184,24 @@ while i < len(cleaned_dataset_list):
         cleaned_dataset_list[i][22] = 1
     i += 1
 
+# Applying One hot encoding on Sex attribute
+i = 0
+while i < len(cleaned_dataset_list):
+    temp = cleaned_dataset_list[i][19]
+    if temp == "male":
+        cleaned_dataset_list[i][19] = 10
+    else:
+        cleaned_dataset_list[i][19] = 1
+    i += 1
 
-
-
-
+# Removing extra attributes
+diabetes_labels = []
+i = 0
+while i < len(cleaned_dataset_list):
+    diabetes_labels.append(cleaned_dataset_list[i][1])
+    cleaned_dataset_list[i].pop(0)
+    cleaned_dataset_list[i].pop(0)
+    i += 1
 
 
 
