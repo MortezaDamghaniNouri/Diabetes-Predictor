@@ -66,28 +66,123 @@ while i < len(cleaned_dataset_list):
         j += 1
     i += 1
 
-BMIs = []
+
+
+# Scaling BMIs
 i = 0
 while i < len(cleaned_dataset_list):
-    BMIs.append(cleaned_dataset_list[i][20])
+    temp = cleaned_dataset_list[i][5]
+    if 9 >= temp >= 0:
+        cleaned_dataset_list[i][5] = 1
+    if 19 >= temp >= 10:
+        cleaned_dataset_list[i][5] = 2
+    if 29 >= temp >= 20:
+        cleaned_dataset_list[i][5] = 3
+    if 39 >= temp >= 30:
+        cleaned_dataset_list[i][5] = 4
+    if 49 >= temp >= 40:
+        cleaned_dataset_list[i][5] = 5
+    if 59 >= temp >= 50:
+        cleaned_dataset_list[i][5] = 6
+    if 69 >= temp >= 60:
+        cleaned_dataset_list[i][5] = 7
+    if 79 >= temp >= 70:
+        cleaned_dataset_list[i][5] = 8
+    if 89 >= temp >= 80:
+        cleaned_dataset_list[i][5] = 9
+    if 100 >= temp >= 90:
+        cleaned_dataset_list[i][5] = 10
     i += 1
-BMIs = repetition_remover(BMIs)
-sorter(BMIs)
-print(BMIs)
 
+# Scaling General Health
+i = 0
+while i < len(cleaned_dataset_list):
+    temp = cleaned_dataset_list[i][15]
+    if temp == "Very_Low":
+        cleaned_dataset_list[i][15] = 10000
+    if temp == "Low":
+        cleaned_dataset_list[i][15] = 1000
+    if temp == "Medium":
+        cleaned_dataset_list[i][15] = 100
+    if temp == "Good":
+        cleaned_dataset_list[i][15] = 10
+    if temp == "High":
+        cleaned_dataset_list[i][15] = 1
+    i += 1
 
+# Scaling Mental Health
+i = 0
+while i < len(cleaned_dataset_list):
+    temp = cleaned_dataset_list[i][16]
+    if 9 >= temp >= 0:
+        cleaned_dataset_list[i][16] = 1
+    if 19 >= temp >= 10:
+        cleaned_dataset_list[i][16] = 2
+    if 30 >= temp >= 20:
+        cleaned_dataset_list[i][16] = 3
+    i += 1
 
+# Scaling Physical Health
+i = 0
+while i < len(cleaned_dataset_list):
+    temp = cleaned_dataset_list[i][17]
+    if 9 >= temp >= 0:
+        cleaned_dataset_list[i][17] = 1
+    if 19 >= temp >= 10:
+        cleaned_dataset_list[i][17] = 2
+    if 30 >= temp >= 20:
+        cleaned_dataset_list[i][17] = 3
+    i += 1
 
+# Scaling Age
+i = 0
+while i < len(cleaned_dataset_list):
+    temp = cleaned_dataset_list[i][20]
+    if 6 >= temp >= 1:
+        cleaned_dataset_list[i][20] = 0
+    else:
+        cleaned_dataset_list[i][20] = 1
+    i += 1
 
+# Scaling Education
+i = 0
+while i < len(cleaned_dataset_list):
+    temp = cleaned_dataset_list[i][21]
+    if temp == "Cat1":
+        cleaned_dataset_list[i][21] = 100000
+    if temp == "Cat2":
+        cleaned_dataset_list[i][21] = 10000
+    if temp == "Cat3":
+        cleaned_dataset_list[i][21] = 1000
+    if temp == "Cat4":
+        cleaned_dataset_list[i][21] = 100
+    if temp == "Cat5":
+        cleaned_dataset_list[i][21] = 10
+    if temp == "Cat6":
+        cleaned_dataset_list[i][21] = 1
+    i += 1
 
-
-
-
-
-
-
-
-
+# Scaling Income
+i = 0
+while i < len(cleaned_dataset_list):
+    temp = cleaned_dataset_list[i][22]
+    if temp == "Cat1":
+        cleaned_dataset_list[i][22] = 10000000
+    if temp == "Cat2":
+        cleaned_dataset_list[i][22] = 1000000
+    if temp == "Cat3":
+        cleaned_dataset_list[i][22] = 100000
+    if temp == "Cat4":
+        cleaned_dataset_list[i][22] = 10000
+    if temp == "Cat5":
+        cleaned_dataset_list[i][22] = 1000
+    if temp == "Cat6":
+        cleaned_dataset_list[i][22] = 100
+    if temp == "Cat7":
+        cleaned_dataset_list[i][22] = 10
+    if temp == "Cat8":
+        cleaned_dataset_list[i][22] = 1
+    i += 1
 
 
 
